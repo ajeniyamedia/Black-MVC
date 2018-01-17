@@ -1,0 +1,11 @@
+Options -MultiViews
+RewriteEngine On
+
+RewriteRule ^$ /mvc/public/ [L]
+RewriteRule (.*) /mvc/public/$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
